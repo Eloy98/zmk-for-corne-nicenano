@@ -5,8 +5,8 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 / {
     combos {
@@ -51,6 +51,16 @@
             bindings = <&kp PIPE>;
             key-positions = <17 18>;
         };
+
+        combo9 {
+            bindings = <&to 1>;
+            key-positions = <1 10>;
+        };
+
+        combo10 {
+            bindings = <&to 0>;
+            key-positions = <2 9>;
+        };
     };
 
     behaviors {
@@ -70,7 +80,7 @@
                 <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             quick-tap-ms = <180>;
             global-quick-tap;
             flavor = "tap-preferred";
@@ -92,30 +102,39 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        mac_layer {
             bindings = <
-&trans  &kp Q  &kp W          &kp E        &kp R        &kp T           &kp Y        &kp U       &kp I    &kp O     &kp P  &trans
-&trans  &kp A  &kp S          &kp D        &kp F        &kp G           &kp H        &kp J       &kp K    &kp L  &kp SEMI  &trans
-&trans  &kp Z  &kp X          &kp C        &kp V        &kp B           &kp N        &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
-                      &tab_esc_ctrl  &lt 1 SPACE  &lt 2 ENTER    &kp LEFT_WIN  &ltq 2 BSPC  &kp RSHIFT
+&trans            &kp Q            &kp W          &kp E          &kp R        &kp T           &kp Y          &kp U         &kp I             &kp O           &kp P  &trans
+&trans  &gqt LEFT_GUI A  &gqt LEFT_ALT S   &gqt LCTRL D  &gqt LSHIFT F        &kp G           &kp H  &gqt RSHIFT J  &gqt RCTRL K  &gqt RIGHT_ALT L  &gqt RGUI SEMI  &trans
+&trans            &kp Z            &kp X          &kp C          &kp V        &kp B           &kp N          &kp M     &kp COMMA           &kp DOT        &kp FSLH  &trans
+                                          &tab_esc_ctrl    &lt 1 SPACE  &lt 2 ENTER    &kp LEFT_WIN    &ltq 2 BSPC         &mo 3
+            >;
+        };
+        
+ win_layer {
+            bindings = <
+&trans            &kp Q            &kp W          &kp E          &kp R        &kp T           &kp Y          &kp U         &kp I             &kp O           &kp P  &trans
+&trans  &gqt LCTRL A  &gqt LEFT_ALT S   &gqt LEFT_GUI D  &gqt LSHIFT F        &kp G           &kp H  &gqt RSHIFT J  &gqt RGUI K  &gqt RIGHT_ALT L  &gqt RCTRL SEMI  &trans
+&trans            &kp Z            &kp X          &kp C          &kp V        &kp B           &kp N          &kp M     &kp COMMA           &kp DOT        &kp FSLH  &trans
+                                          &tab_esc_ctrl    &lt 1 SPACE  &lt 2 ENTER    &kp LEFT_WIN    &ltq 2 BSPC         &mo 3
             >;
         };
 
-        lower_layer {
+        layer_1 {
             bindings = <
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4   &kp NUMBER_5    &kp NUMBER_6   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9   &kp NUMBER_0  &trans
-&trans     &kp LC(A)     &kp LC(S)     &kp LC(D)     &kp LC(F)    &kp LC(F12)       &kp MINUS      &kp EQUAL     &kp GRAVE     &kp RC(L)        &kp SQT  &trans
-&trans     &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)  &kp LC(LA(A))         &kp F12  &kp RIGHT_ALT       &kp TAB        &trans  &kp RC(SLASH)  &trans
-                                          &trans        &trans         &trans           &mo 3     &kp RSHIFT        &trans
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9   &kp NUMBER_0  &trans
+&trans         &none         &none         &none         &none         &none       &kp MINUS     &kp EQUAL     &kp GRAVE     &kp RC(L)        &kp SQT  &trans
+&trans         &none         &none         &none         &none         &none           &none         &none         &none        &trans  &kp RC(SLASH)  &trans
+                                          &trans        &trans        &trans           &mo 3    &kp RSHIFT        &trans
             >;
         };
 
         layer_2 {
             bindings = <
-&trans  &kp K_CALCULATOR  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_NUMBER_0    &trans    &trans    &kp UP     &trans  &trans  &trans
-&trans          &kp CAPS  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6       &kp KP_DOT    &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
-&trans           &kp DEL  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3      &kp AT_SIGN    &trans    &trans    &trans     &trans  &trans  &trans
-                                                    &trans           &trans           &trans    &trans    &trans    &trans
+&trans     &none  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_NUMBER_0    &trans    &trans    &kp UP     &trans  &trans  &trans
+&trans  &kp CAPS  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6       &kp KP_DOT    &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
+&trans   &kp DEL  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3      &kp AT_SIGN    &trans    &trans    &trans     &trans  &trans  &trans
+                                            &trans           &trans           &trans    &trans    &trans    &trans
             >;
         };
 
@@ -127,5 +146,7 @@
                                           &trans        &trans        &trans    &trans  &trans  &trans
             >;
         };
+
+       
     };
 };

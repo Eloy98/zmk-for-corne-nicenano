@@ -107,16 +107,16 @@
 &trans            &kp Q            &kp W          &kp E          &kp R        &kp T           &kp Y          &kp U         &kp I             &kp O           &kp P  &trans
 &trans  &gqt LEFT_GUI A  &gqt LEFT_ALT S   &gqt LCTRL D  &gqt LSHIFT F        &kp G           &kp H  &gqt RSHIFT J  &gqt RCTRL K  &gqt RIGHT_ALT L  &gqt RGUI SEMI  &trans
 &trans            &kp Z            &kp X          &kp C          &kp V        &kp B           &kp N          &kp M     &kp COMMA           &kp DOT        &kp FSLH  &trans
-                                          &tab_esc_ctrl    &lt 1 SPACE  &lt 2 ENTER    &kp LEFT_WIN    &ltq 2 BSPC         &mo 3
+                                          &tab_esc_ctrl    &lt 2 SPACE  &lt 3 ENTER    &kp LEFT_WIN    &ltq 3 BSPC         &mo 4
             >;
         };
-        
- win_layer {
+
+        win_layer {
             bindings = <
-&trans            &kp Q            &kp W          &kp E          &kp R        &kp T           &kp Y          &kp U         &kp I             &kp O           &kp P  &trans
-&trans  &gqt LCTRL A  &gqt LEFT_ALT S   &gqt LEFT_GUI D  &gqt LSHIFT F        &kp G           &kp H  &gqt RSHIFT J  &gqt RGUI K  &gqt RIGHT_ALT L  &gqt RCTRL SEMI  &trans
-&trans            &kp Z            &kp X          &kp C          &kp V        &kp B           &kp N          &kp M     &kp COMMA           &kp DOT        &kp FSLH  &trans
-                                          &tab_esc_ctrl    &lt 1 SPACE  &lt 2 ENTER    &kp LEFT_WIN    &ltq 2 BSPC         &mo 3
+&trans         &kp Q            &kp W            &kp E          &kp R        &kp T           &kp Y          &kp U        &kp I             &kp O            &kp P  &trans
+&trans  &gqt LCTRL A  &gqt LEFT_ALT S  &gqt LEFT_GUI D  &gqt LSHIFT F        &kp G           &kp H  &gqt RSHIFT J  &gqt RGUI K  &gqt RIGHT_ALT L  &gqt RCTRL SEMI  &trans
+&trans         &kp Z            &kp X            &kp C          &kp V        &kp B           &kp N          &kp M    &kp COMMA           &kp DOT         &kp FSLH  &trans
+                                         &tab_esc_ctrl    &lt 1 SPACE  &lt 2 ENTER    &kp LEFT_WIN    &ltq 2 BSPC        &mo 3
             >;
         };
 
@@ -146,7 +146,5 @@
                                           &trans        &trans        &trans    &trans  &trans  &trans
             >;
         };
-
-       
     };
 };

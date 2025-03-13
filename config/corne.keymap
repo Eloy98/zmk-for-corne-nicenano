@@ -53,13 +53,8 @@
         };
 
         combo9 {
-            bindings = <&to 0>;
-            key-positions = <1 10>;
-        };
-
-        combo10 {
-            bindings = <&to 0>;
-            key-positions = <2 9>;
+            bindings = <&kp ENTER>;
+            key-positions = <21 22>;
         };
     };
 
